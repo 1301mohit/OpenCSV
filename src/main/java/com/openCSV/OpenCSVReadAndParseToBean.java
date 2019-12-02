@@ -1,13 +1,12 @@
 package com.openCSV;
 
-import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
 import java.util.List;
 
 public class OpenCSVReadAndParseToBean {
@@ -18,7 +17,7 @@ public class OpenCSVReadAndParseToBean {
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
                 ) {
-            CsvtoBean<CSVUser> csvToBean = new CsvToBeanBuilder(reader)
+            CsvToBean<CSVUser> csvToBean = new CsvToBeanBuilder(reader)
                     .withType(CSVUser.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
